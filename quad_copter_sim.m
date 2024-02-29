@@ -1,7 +1,8 @@
 %% Prep
 % Use dynamics module
 addpath('rigid_body_dynamics\')
-addpath('quadcopter_databse\')
+addpath('quadcopter_database\')
+addpath('functions\')
 
 % Start
 clc, clear, close all
@@ -83,7 +84,7 @@ for i = t_s:t_s:t_lim
     W(:,step_counter + 1) = W_NEW;
 
     if mod(step_counter, 100) == 0
-        PLOTOBJECT(3, dims, X_NEW, E_NEW, 1)
+        PLOTOBJECT(3, 10*dims, X_NEW, E_NEW, 1)
     end
     
 end
@@ -93,8 +94,8 @@ PLOTRESULTS([1,2],t_s,X,E,V,W)
 
 %% Remove path
 rmpath('rigid_body_dynamics\')
-rmpath('quadcopter_databse\')
-
+rmpath('quadcopter_database\')
+rmpath('functions\')
 
 
 
