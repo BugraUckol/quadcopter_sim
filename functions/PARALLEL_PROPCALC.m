@@ -18,4 +18,8 @@ M = MD + cross(repmat(R,N,1), F);
 % Wing orientation
 EN = E + WP * TS;
 
+EN = reshape(EN,3,[]);
+F = reshape(F,3,[]);
+M = reshape(M,3,[]);
+
 end
